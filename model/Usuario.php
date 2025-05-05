@@ -1,8 +1,8 @@
 <?php
 
-require_once 'config/database.php';
+require_once __DIR__ .'/../config/database.php';
 
-class Usuario {
+class Usuario{
     private $conexion;
     public function __construct() {
         $this->conexion = Database::conectar();
@@ -22,8 +22,19 @@ class Usuario {
     public function update ($id,$name,$lastName){
         $stmt=$this->conexion->prepare("UPDATE usuario SET name=?,lastName=? WHERE id=?");
         return $stmt->execute([$name,$lastName,$id]);
+       
     }
+    public function store($data){
+
+        $query= "INSERT INTO usuario(id, name, lastName) VALUES(?,?,?)";
+     
+        $stmt = $this->conexion->prepare($query);
+     
+        return $stmt->execute([$data ['id'], $data ['name'], $data ['lastName']]);
+     
+        }
 
 }
+
 
 ?>

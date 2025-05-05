@@ -13,11 +13,11 @@
         <input type="text" class="form-control" name="id" disabled value=<?php echo $_GET['id'];?>
 
         <label for="" class="form-label">name</label> 
-        <input type="text" class="form-control"  placeholder="Ingresar un nombre .." name="name"> <br>
+        <input type="text" class="form-control"  placeholder="Ingresar un nombre .." name="name" value=<?php echo $_GET['name'];?>> <br>
 
 
         <label for="" class="form-label">lastName</label> 
-         <input type="text" class="form-control" placeholder="Ingresar un apellido .." name="lastName"> <br>
+         <input type="text" class="form-control" placeholder="Ingresar un apellido .." name="lastName"value=<?php echo $_GET['lastName'];?>> <br>
         <button class="btn btn-primary"> Editar </button>
      </form>
    
